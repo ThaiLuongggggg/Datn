@@ -1,0 +1,41 @@
+[0.013s] Invoking command in '/home/luong/Test/build/nav2_astar_demo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/luong/Test/build/nav2_astar_demo -- -j16 -l16
+[0.067s] [35m[1mConsolidate compiler generated dependencies of target scso_planner_benchmark[0m
+[0.067s] [35m[1mConsolidate compiler generated dependencies of target custom_planner_example[0m
+[0.093s] [ 50%] Built target scso_planner_benchmark
+[0.093s] [100%] Built target custom_planner_example
+[0.106s] Invoked command in '/home/luong/Test/build/nav2_astar_demo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/luong/Test/build/nav2_astar_demo -- -j16 -l16
+[0.117s] Invoking command in '/home/luong/Test/build/nav2_astar_demo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/luong/Test/build/nav2_astar_demo
+[0.125s] -- Install configuration: ""
+[0.125s] -- Execute custom install script
+[0.125s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/custom_planner_example/custom_planner_plugins.xml
+[0.125s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/scso_planner_benchmark/scso_planner_plugins.xml
+[0.125s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/lib/libcustom_planner_example.so
+[0.126s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/lib/libscso_planner_benchmark.so
+[0.126s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/include/custom_planner_example/custom_planner.hpp
+[0.126s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/include/scso_planner_benchmark/scso_planner.hpp
+[0.126s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/launch/__pycache__/astar_demo.launch.cpython-310.pyc
+[0.127s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/launch/astar_demo.launch.py
+[0.127s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/config/nav2_params.yaml
+[0.127s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/maps/sample_map.pgm
+[0.127s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/maps/sample_map.yaml
+[0.127s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/rviz/astar_demo.rviz
+[0.127s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/lib/nav2_astar_demo/launch_demo.py
+[0.127s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/lib/nav2_astar_demo/goal_pose_bridge.py
+[0.127s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/lib/nav2_astar_demo/test_plan_client.py
+[0.128s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/ament_index/resource_index/package_run_dependencies/nav2_astar_demo
+[0.128s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/ament_index/resource_index/parent_prefix_path/nav2_astar_demo
+[0.128s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/environment/ament_prefix_path.sh
+[0.128s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/environment/ament_prefix_path.dsv
+[0.128s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/environment/path.sh
+[0.128s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/environment/path.dsv
+[0.128s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/local_setup.bash
+[0.129s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/local_setup.sh
+[0.129s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/local_setup.zsh
+[0.129s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/local_setup.dsv
+[0.129s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/package.dsv
+[0.140s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/ament_index/resource_index/packages/nav2_astar_demo
+[0.140s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/ament_index/resource_index/nav2_core__pluginlib__plugin/nav2_astar_demo
+[0.140s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/cmake/nav2_astar_demoConfig.cmake
+[0.141s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/cmake/nav2_astar_demoConfig-version.cmake
+[0.141s] -- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/package.xml
+[0.143s] Invoked command in '/home/luong/Test/build/nav2_astar_demo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/luong/Test/build/nav2_astar_demo

@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/luong/Test/build/nav2_astar_demo/libcustom_planner_example.so" "/home/luong/Test/build/nav2_astar_demo/libscso_planner_benchmark.so" "TARGETS" "custom_planner_example" "scso_planner_benchmark" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")

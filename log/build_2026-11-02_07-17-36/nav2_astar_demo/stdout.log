@@ -1,0 +1,57 @@
+-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rclcpp: 16.0.21 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.4 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found rclcpp_lifecycle: 16.0.21 (/opt/ros/humble/share/rclcpp_lifecycle/cmake)
+-- Found nav2_core: 1.1.20 (/opt/ros/humble/share/nav2_core/cmake)
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/luong/Test/build/nav2_astar_demo
+[35m[1mConsolidate compiler generated dependencies of target custom_planner_example[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/scso_planner_benchmark.dir/scso_planner_benchmark/src/scso_planner.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/custom_planner_example.dir/custom_planner_example/src/custom_planner.cpp.o[0m
+[ 75%] [32m[1mLinking CXX shared library libcustom_planner_example.so[0m
+[100%] [32m[1mLinking CXX shared library libscso_planner_benchmark.so[0m
+[100%] Built target custom_planner_example
+[100%] Built target scso_planner_benchmark
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/custom_planner_example/custom_planner_plugins.xml
+-- Symlinking: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/scso_planner_benchmark/scso_planner_plugins.xml
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/lib/libcustom_planner_example.so
+-- Symlinking: /home/luong/Test/install/nav2_astar_demo/lib/libscso_planner_benchmark.so
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/include/custom_planner_example/custom_planner.hpp
+-- Symlinking: /home/luong/Test/install/nav2_astar_demo/include/scso_planner_benchmark/scso_planner.hpp
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/launch/__pycache__/astar_demo.launch.cpython-310.pyc
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/launch/astar_demo.launch.py
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/config/nav2_params.yaml
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/maps/sample_map.pgm
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/maps/sample_map.yaml
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/rviz/astar_demo.rviz
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/lib/nav2_astar_demo/launch_demo.py
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/lib/nav2_astar_demo/goal_pose_bridge.py
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/lib/nav2_astar_demo/test_plan_client.py
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/ament_index/resource_index/package_run_dependencies/nav2_astar_demo
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/ament_index/resource_index/parent_prefix_path/nav2_astar_demo
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/environment/path.sh
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/environment/path.dsv
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/local_setup.bash
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/local_setup.sh
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/local_setup.zsh
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/local_setup.dsv
+-- Symlinking: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/package.dsv
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/ament_index/resource_index/packages/nav2_astar_demo
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/ament_index/resource_index/nav2_core__pluginlib__plugin/nav2_astar_demo
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/cmake/nav2_astar_demoConfig.cmake
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/cmake/nav2_astar_demoConfig-version.cmake
+-- Up-to-date symlink: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/package.xml

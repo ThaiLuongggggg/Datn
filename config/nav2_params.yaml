@@ -1,0 +1,141 @@
+# ==============================================================================
+# CẤU HÌNH NAV2 CHO DEMO THUẬT TOÁN QUY HOẠCH TOÀN CỤC A* (GLOBAL PATH PLANNING)
+# Dự án tối giản: Chỉ chạy map_server, planner_server, lifecycle_manager, rviz2
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. CẤU HÌNH MAP SERVER (Đọc và xuất bản bản đồ tĩnh OccupancyGrid lên topic /map)
+# ------------------------------------------------------------------------------
+map_server:
+  ros__parameters:
+    use_sim_time: false
+    # Đường dẫn file YAML của bản đồ.
+    # Tham số này có thể được ghi đè tự động thông qua launch argument 'map'
+    yaml_filename: ""
+    topic_name: "map"
+    frame_id: "map"
+
+# ------------------------------------------------------------------------------
+# 2. CẤU HÌNH PLANNER SERVER (Node tính toán đường đi toàn cục)
+# ------------------------------------------------------------------------------
+planner_server:
+  ros__parameters:
+    expected_planner_frequency: 10.0
+    use_sim_time: false
+    # Danh sách các plugin planner cùng hoạt động song song để Benchmark
+    # Plugin 1: GridBased (Thuật toán A*)
+    # Plugin 2: SCSO (Thuật toán Sand Cat Swarm Optimization truyền thống)
+    planner_plugins: ["GridBased", "SCSO"]
+
+    # --- PLUGIN 1: NavfnPlanner với A* (Mặc định được kích hoạt) ---
+    GridBased:
+      plugin: "nav2_navfn_planner/NavfnPlanner"
+      # use_astar = true: Sử dụng thuật toán A* (heuristic khoảng cách Manhattan/Euclidean)
+      # use_astar = false: Sử dụng thuật toán Dijkstra truyền thống
+      use_astar: true
+      tolerance: 0.5              # Dung sai khoảng cách đến mục tiêu (mét)
+      allow_unknown: true         # Cho phép tìm đường qua vùng chưa rõ (unknown space)
+
+    # --- PLUGIN 2: Sand Cat Swarm Optimization (SCSO Planner) ---
+    SCSO:
+      plugin: "scso_planner_benchmark::ScsoPlanner"
+      max_iterations: 150         # t_max: Số thế hệ tiến hóa tối đa
+      population_size: 50         # N: Số cá thể mèo cát trong quần thể
+      num_waypoints: 7            # m: Tổng số điểm mốc (kể cả Start và Goal)
+      samples_per_segment: 15     # N_s: Số điểm lấy mẫu nội suy trên mỗi đoạn thẳng
+      max_sensitivity_range: 2.0  # S_M: Tần số thính giác khởi tạo của mèo cát
+      seed: 0                     # Seed ngẫu nhiên (0: tự sinh ngẫu nhiên)
+      w1: 1.0                     # Trọng số độ dài chuẩn hóa J1
+      w2: 1.5                     # Trọng số độ mượt chuẩn hóa J2
+      w3: 1.0                     # Trọng số an toàn & phạt va chạm J3
+      kappa: 1.5                  # Hệ số an toàn phạt vi phạm (kappa)
+      robot_radius: 0.22          # Bán kính robot (mét)
+      safety_margin: 0.05         # Bán kính an toàn bù sai số điều khiển (mét)
+
+    # --- LỰA CHỌN 2: SmacPlanner2D (Thuật toán 2D A* tối ưu chuyên sâu của Nav2) ---
+    # Để sử dụng, đổi plugin ở trên thành "nav2_smac_planner/SmacPlanner2D"
+    # hoặc kích hoạt block tham số dưới đây:
+    # GridBased:
+    #   plugin: "nav2_smac_planner/SmacPlanner2D"
+    #   tolerance: 0.25
+    #   downsample_costmap: false
+    #   allow_unknown: true
+    #   max_iterations: 1000000
+    #   max_on_approach_iterations: 1000
+    #   max_planning_time: 2.0
+    #   motion_model_for_search: "MOORE"  # 8 hướng di chuyển
+
+    # --- LỰA CHỌN 3: Plugin tùy biến kế thừa từ nav2_core::GlobalPlanner ---
+    # GridBased:
+    #   plugin: "custom_planner_example/CustomAStarPlanner"
+    #   custom_heuristic_weight: 1.2
+    #   allow_unknown: true
+
+# ------------------------------------------------------------------------------
+# 3. CẤU HÌNH GLOBAL COSTMAP (Bản đồ chi phí toàn cục)
+# ------------------------------------------------------------------------------
+global_costmap:
+  global_costmap:
+    ros__parameters:
+      update_frequency: 1.0       # Tần số cập nhật costmap (Hz)
+      publish_frequency: 1.0      # Tần số publish costmap lên RViz (Hz)
+      global_frame: map           # Frame tọa độ bản đồ
+      robot_base_frame: base_link # Frame tọa độ gốc của robot
+      use_sim_time: false
+      robot_radius: 0.22          # Bán kính bao quanh thân robot (mét)
+      resolution: 0.05            # Độ phân giải costmap (mét/pixel)
+      track_unknown_space: true   # Theo dõi các ô chưa xác định
+      always_send_full_costmap: true
+
+      # Chỉ nạp static_layer và inflation_layer (không cần obstacle_layer vì không có sensor scan)
+      plugins: ["static_layer", "inflation_layer"]
+
+      # Layer đọc bản đồ tĩnh từ map_server
+      static_layer:
+        plugin: "nav2_costmap_2d::StaticLayer"
+        map_subscribe_transient_local: true
+
+      # Layer thổi phồng vật cản (tránh robot chạm mép vật cản)
+      inflation_layer:
+        plugin: "nav2_costmap_2d::InflationLayer"
+        cost_scaling_factor: 3.0  # Hệ số suy giảm chi phí theo khoảng cách
+        inflation_radius: 0.45    # Bán kính vùng an toàn thổi phồng quanh vật cản (mét)
+
+# ------------------------------------------------------------------------------
+# 4. CẤU HÌNH LIFECYCLE MANAGER (Quản lý trạng thái vòng đời của map_server & planner_server)
+# ------------------------------------------------------------------------------
+lifecycle_manager_navigation:
+  ros__parameters:
+    use_sim_time: false
+    autostart: true               # Tự động kích hoạt (transition sang ACTIVE) khi khởi động
+    node_names:
+      - "map_server"
+      - "planner_server"
+
+# ------------------------------------------------------------------------------
+# 5. CẤU HÌNH ĐIỂM XUẤT PHÁT (START) VÀ ĐÍCH ĐẾN (GOAL) CỐ ĐỊNH CHO ROBOT
+# Bạn có thể chỉnh sửa trực tiếp tọa độ (X, Y) tại đây để thay đổi điểm mặc định!
+# ------------------------------------------------------------------------------
+goal_pose_bridge:
+  ros__parameters:
+    use_sim_time: false
+    auto_plan: true             # Tự động tính toán đường đi ngay khi khởi chạy
+    publish_markers: true       # Vẽ điểm Start (Xanh lá) và Goal (Đỏ) lên RViz2
+    planner_id: "GridBased"     # Plugin mặc định khi tự động tìm đường ("GridBased" hoặc "SCSO")
+    
+    # Tọa độ điểm xuất phát cố định (Start Pose)
+    start_x: 6.5               # Tọa độ X (mét)
+    start_y: -6.03               # Tọa độ Y (mét)
+    start_yaw: 0.0              # Góc hướng robot (radian)
+
+    # Tọa độ điểm đích đến cố định (Goal Pose)
+    goal_x: -6.31                 # Tọa độ X (mét)
+    goal_y: 6.24                 # Tọa độ Y (mét)
+    goal_yaw: 0.0               # Góc hướng đích đến (radian)
+
+    # Kích thước hình tròn đánh dấu (Start: Xanh lá, Goal: Đỏ)
+    # Chiều rộng vật cản cột trong bản đồ là 0.50m -> 1/3 khoảng 0.17m - 0.20m
+    marker_diameter: 0.6       # Đường kính hình tròn (mét) - Mặc định ~1/3 vật cản
+    marker_height: 0.2         # Độ dày hình tròn phẳng (mét)
+
+

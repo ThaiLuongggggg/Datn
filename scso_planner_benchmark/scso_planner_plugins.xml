@@ -1,0 +1,7 @@
+<library path="scso_planner_benchmark">
+  <class type="scso_planner_benchmark::ScsoPlanner" base_class_type="nav2_core::GlobalPlanner">
+    <description>
+      Plugin Global Path Planning sử dụng thuật toán Sand Cat Swarm Optimization (SCSO) truyền thống kết hợp hàm chi phí không thứ nguyên và hệ số phạt Beta thích nghi cho bài toán Benchmark trên ROS 2 Nav2.
+    </description>
+  </class>
+</library>

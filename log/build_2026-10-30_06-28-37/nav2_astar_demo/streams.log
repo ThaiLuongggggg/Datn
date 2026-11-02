@@ -1,0 +1,75 @@
+[0.011s] Invoking command in '/home/luong/Test/build/nav2_astar_demo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/luong/Test -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/luong/Test/install/nav2_astar_demo
+[0.078s] -- The C compiler identification is GNU 11.4.0
+[0.139s] -- The CXX compiler identification is GNU 11.4.0
+[0.148s] -- Detecting C compiler ABI info
+[0.244s] -- Detecting C compiler ABI info - done
+[0.252s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.252s] -- Detecting C compile features
+[0.253s] -- Detecting C compile features - done
+[0.256s] -- Detecting CXX compiler ABI info
+[0.351s] -- Detecting CXX compiler ABI info - done
+[0.356s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.356s] -- Detecting CXX compile features
+[0.357s] -- Detecting CXX compile features - done
+[0.359s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.489s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.541s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.562s] -- Found rclcpp: 16.0.21 (/opt/ros/humble/share/rclcpp/cmake)
+[0.594s] -- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.598s] -- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.604s] -- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.613s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.626s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.658s] -- Found rmw_implementation_cmake: 6.1.4 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.660s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.767s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.796s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.834s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.845s] -- Looking for pthread.h
+[0.946s] -- Looking for pthread.h - found
+[0.946s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.039s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.040s] -- Found Threads: TRUE  
+[1.086s] -- Found rclcpp_lifecycle: 16.0.21 (/opt/ros/humble/share/rclcpp_lifecycle/cmake)
+[1.101s] -- Found nav2_core: 1.1.20 (/opt/ros/humble/share/nav2_core/cmake)
+[1.289s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[1.289s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.456s] -- Configuring done
+[1.524s] -- Generating done
+[1.531s] -- Build files have been written to: /home/luong/Test/build/nav2_astar_demo
+[1.551s] Invoked command in '/home/luong/Test/build/nav2_astar_demo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/luong/Test -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/luong/Test/install/nav2_astar_demo
+[1.553s] Invoking command in '/home/luong/Test/build/nav2_astar_demo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/luong/Test/build/nav2_astar_demo -- -j16 -l16
+[1.623s] [ 50%] [32mBuilding CXX object CMakeFiles/custom_planner_example.dir/custom_planner_example/src/custom_planner.cpp.o[0m
+[6.142s] [100%] [32m[1mLinking CXX shared library libcustom_planner_example.so[0m
+[6.389s] [100%] Built target custom_planner_example
+[6.402s] Invoked command in '/home/luong/Test/build/nav2_astar_demo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/luong/Test/build/nav2_astar_demo -- -j16 -l16
+[6.414s] Invoking command in '/home/luong/Test/build/nav2_astar_demo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/luong/Test/build/nav2_astar_demo
+[6.421s] -- Install configuration: ""
+[6.421s] -- Execute custom install script
+[6.422s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/custom_planner_example/custom_planner_plugins.xml
+[6.431s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/lib/libcustom_planner_example.so
+[6.441s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/include/custom_planner_example/custom_planner.hpp
+[6.451s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/launch/astar_demo.launch.py
+[6.462s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/config/nav2_params.yaml
+[6.472s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/maps/sample_map.pgm
+[6.482s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/maps/sample_map.yaml
+[6.493s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/rviz/astar_demo.rviz
+[6.502s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/lib/nav2_astar_demo/goal_pose_bridge.py
+[6.511s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/lib/nav2_astar_demo/test_plan_client.py
+[6.521s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/share/ament_index/resource_index/package_run_dependencies/nav2_astar_demo
+[6.530s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/share/ament_index/resource_index/parent_prefix_path/nav2_astar_demo
+[6.540s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/environment/ament_prefix_path.sh
+[6.552s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/environment/ament_prefix_path.dsv
+[6.564s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/environment/path.sh
+[6.574s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/environment/path.dsv
+[6.582s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/local_setup.bash
+[6.592s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/local_setup.sh
+[6.603s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/local_setup.zsh
+[6.611s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/local_setup.dsv
+[6.621s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/package.dsv
+[6.634s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/share/ament_index/resource_index/packages/nav2_astar_demo
+[6.650s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/share/ament_index/resource_index/nav2_core__pluginlib__plugin/nav2_astar_demo
+[6.672s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/cmake/nav2_astar_demoConfig.cmake
+[6.684s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/cmake/nav2_astar_demoConfig-version.cmake
+[6.694s] -- Symlinking: /home/luong/Test/install/nav2_astar_demo/share/nav2_astar_demo/package.xml
+[6.706s] Invoked command in '/home/luong/Test/build/nav2_astar_demo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/luong/Test/build/nav2_astar_demo

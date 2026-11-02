@@ -1,0 +1,7 @@
+<library path="custom_planner_example">
+  <class type="custom_planner_example::CustomAStarPlanner" base_class_type="nav2_core::GlobalPlanner">
+    <description>
+      Plugin mẫu lập kế hoạch đường đi toàn cục A* cho Nav2 (nav2_core::GlobalPlanner).
+    </description>
+  </class>
+</library>

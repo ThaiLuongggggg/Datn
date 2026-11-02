@@ -1,0 +1,1 @@
+/home/luong/Test/build/nav2_astar_demo/ament_cmake_environment_hooks/local_setup.sh
